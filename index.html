@@ -12,39 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<style>
-    /* Existing styles remain the same */
-    /* Mobile Menu Button Styles */
-    .mobile-menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
 
-    /* Mobile Menu Styles */
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #1b4b9f;
-        padding: 20px;
-        z-index: 1000;
-    }
-
-    .mobile-menu.show {
-        display: block;
-    }
-
-    .mobile-menu-content {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-</style>
 
 <body>
     <!-- header section start here -->
@@ -609,14 +577,27 @@
     <!-- footer section end here -->
     <script>
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mobileMenu = document.querySelector('.mobile-menu');
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
 
-            mobileMenuBtn.addEventListener('click', function () {
-                mobileMenu.classList.toggle('show');
-            });
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function () {
+            mobileMenu.classList.toggle('show');
+
+            if (mobileMenu.classList.contains('show')) {
+                localStorage.setItem('mobileMenuOpen', 'true');
+            } else {
+                localStorage.removeItem('mobileMenuOpen');
+            }
         });
+
+        if (localStorage.getItem('mobileMenuOpen') === 'true') {
+            mobileMenu.classList.add('show');
+        }
+    }
+});
+
     </script>
     <script>
         const track = document.querySelector('.testimonials-track');

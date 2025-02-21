@@ -41,6 +41,35 @@ section.section-header-item {
     height: auto;
 }
 
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #1b4b9f;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.mobile-menu.show {
+    display: block;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .logo-img {
     display: flex;
     gap: 5px;
@@ -671,6 +700,7 @@ a.btn.btn-primary.view-all-btn {
     border-radius: 4px;
     font-size: 14px;
 }
+
 /* .dropdown {
     display: block;
 } */
@@ -817,16 +847,20 @@ a.btn.btn-primary.view-all-btn {
 
     .logo-img h3 {
         font-size: 20px;
+        padding-top: 9px;
     }
 
     .mobile-menu {
         top: 60px;
     }
 }
-@media (max-width: 991px) { /* 991px Bootstrap lg breakpoint */
-    .mobile-menu-btn {
+
+@media (max-width: 991px) {
+
+    /* 991px Bootstrap lg breakpoint */
+    /* .mobile-menu-btn {
         display: block;
-    }
+    } */
     .dropdown {
         display: none;
     }
