@@ -671,7 +671,9 @@ a.btn.btn-primary.view-all-btn {
     border-radius: 4px;
     font-size: 14px;
 }
-
+/* .dropdown {
+    display: block;
+} */
 /* <!-- footer section end here --> */
 /* response css */
 @media (max-width: 768px) {
@@ -819,5 +821,13 @@ a.btn.btn-primary.view-all-btn {
 
     .mobile-menu {
         top: 60px;
+    }
+}
+@media (max-width: 991px) { /* 991px Bootstrap lg breakpoint */
+    .mobile-menu-btn {
+        display: block;
+    }
+    .dropdown {
+        display: none;
     }
 }
